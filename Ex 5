@@ -1,0 +1,118 @@
+package pack1; 
+public class MathOperation { 
+public int add(int a,int b){ 
+return a+b; 
+} 
+public int subtact(int a,int b){ 
+return a-b; 
+} 
+}
+
+package pack2; 
+public class StringOperation { 
+String CatStr,RevStr=""; 
+public String concatenate(String a,String b){ 
+CatStr = a+" "+b; 
+return CatStr; 
+} 
+public String reverse(String str){ 
+char ch[] = str.toCharArray(); 
+int strlen = str.length(); 
+for(int i=strlen-1;i>=0;i--){ 
+RevStr=RevStr+ch[i]; 
+} 
+return RevStr; 
+} 
+}
+
+package pack3; 
+class UDException extends Exception{ 
+public UDException(String message){ 
+super(message); 
+} 
+} 
+public class calculator { 
+double div; 
+public int multiply(int a,int b){ 
+return a*b; 
+} 
+public double divide(double a,double b){ 
+try{ 
+if(b==0){ 
+throw new Exception("Do not enter 0 as denominator."); 
+} 
+else{ 
+div=a/b; 
+} 
+} 
+catch(Exception e){ 
+System.out.println(e.getMessage()); 
+} 
+return div; 
+} 
+}
+
+
+
+
+
+
+
+// Distance converter
+// Create a package named "converter"
+package converter;
+
+// Create a class named "DistanceConverter" in the "converter" package
+public class DistanceConverter {
+
+    // Method to convert meters to kilometers
+    public static double metersToKilometers(double meters) {
+        return meters / 1000.0;
+    }
+
+    // Method to convert miles to kilometers
+    public static double milesToKilometers(double miles) {
+        return miles * 1.60934;
+    }
+
+    // Method to convert kilometers to miles
+    public static double kilometersToMiles(double kilometers) {
+        return kilometers / 1.60934;
+    }
+
+    // Method to convert kilometers to meters
+    public static double kilometersToMeters(double kilometers) {
+        return kilometers * 1000.0;
+    }
+}
+
+
+
+
+
+// Create a package named "main"
+package main;
+
+// Import the "converter" package to use the DistanceConverter class
+import converter.DistanceConverter;
+
+public class Main {
+
+    public static void main(String[] args) {
+        // Example conversions
+        double meters = 1000.0;
+        double miles = 10.0;
+
+        // Convert meters to kilometers
+        double metersToKm = DistanceConverter.metersToKilometers(meters);
+        System.out.println(meters + " meters is equal to " + metersToKm + " kilometers");
+
+        // Convert miles to kilometers
+        double milesToKm = DistanceConverter.milesToKilometers(miles);
+        System.out.println(miles + " miles is equal to " + milesToKm + " kilometers");
+
+        // Convert kilometers to miles
+        double kmToMiles = DistanceConverter.kilometersToMiles(metersToKm);
+        System.out.println(metersToKm + " kilometers is equal to " + kmToMiles + " miles");
+    }
+}
